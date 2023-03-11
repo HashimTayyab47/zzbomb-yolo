@@ -1,0 +1,19 @@
+{
+  "name": "testStore",
+  "version": "1.0.0",
+  "description": "NightwatchJS test",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^110.0.0",
+    "cucumber": "^6.0.7",
+    "nightwatch": "^2.6.16"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^9.0.0"
+  }
+}
