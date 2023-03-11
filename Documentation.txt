@@ -1,0 +1,12 @@
+Meetings Notes
+## **Project Chosen**
+
+We have chosen Metabase application as our test project.
+
+## **Problem faced during Running Docker**
+
+While we were running docker the laptop kept crashing due to excessive RAM usage. To solve this problem we created a “*.wslconfig”* file in users folder in C directory. I then configured wsl2 to use only 4GB of RAM for running Docker. Doing this allowed the laptop to stop crashing
+
+## **Problem while setting up the project**
+
+At first we were trying to use nightwath-api and nightwatch-cucumber apis, but they were generating errors so we found out that these are actually deprecated so we used @cucumber/cucumber instead.

@@ -1,0 +1,71 @@
+
+USER STORY 1: As a user, I should be able to add or remove new items.
+
+Scenario: create new collection
+
+	Given I am on main dashboard
+	When I click on new button
+	Then I click on collection
+	Then I add name for collection
+    Then I create the collection
+
+Scenario: create new dashboard
+
+	Given I am on original dashboard
+	When I click on new
+	Then I click on dashboard
+	Then I add name for dashboard
+    Then I create the dashboard
+
+Scenario: Archive a collection
+
+	Given I am on the collection page
+    When I click on 3 dots
+	Then I click on archive button
+    Then I confirm on popup
+
+Scenario: Archive a dashboard
+
+	Given I am on the dashboard page
+    When I click on 3 dots on the dashboard
+	Then I click on archive dashboard button
+
+USER STORY 2: As a user, I want to be able to create a basic table to display my data.
+
+Scenario: Open sample database list
+
+    Given I am on the landing page
+    When I click on the browse Data button
+    When I Click on sample Database
+    Then It shows list of sample databases
+ 
+Scenario: User selects invalid data fields
+    Given the user has data available to create a table
+    When the user selects valid table format
+    And selects invalid data fields
+    Then the system should display an error message
+
+
+USER STORY 3: As a user, I want to be able to export data to a CSV file.
+
+Scenario: User selects valid data fields and export format
+    Given the user has data available to export
+    When the user selects a valid export format
+    And selects valid data fields
+    Then the system should export the data to a CSV file with the selected data fields and format
+
+Scenario: User selects invalid export format
+    Given the user has data available to export
+    When the user selects an invalid export format
+    Then the system should display an error message
+
+Scenario: User selects invalid data fields
+    Given the user has data available to export
+    When the user selects valid export format
+    And selects invalid data fields
+    Then the system should display an error message
+
+Scenario: User verifies exported CSV file
+    Given the user has exported data to a CSV file
+    When the user opens the CSV file in another application
+    Then the CSV file should contain the correct data and formatting
