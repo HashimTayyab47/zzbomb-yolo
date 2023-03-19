@@ -8,6 +8,7 @@ module.exports = {
     }
     },
   src_folders: ["tests"], //tests is a folder in workspace that has the step definitions
+  page_objects_path: 'pageObjects',
   test_settings: {
     default: {
       webdriver: {
