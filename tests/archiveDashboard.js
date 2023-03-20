@@ -1,15 +1,23 @@
 const { Given, Then, When } = require('@cucumber/cucumber');
 
+let root;
 Given(/^I am on the dashboard page$/, async () => {
-    await browser.url('http://localhost:3000/collection/root');
+    root = browser.page.root();
+    await root.navigate();
+});
+
+When(/^I log in2$/, async () => {
+    await root.click('input[type="email"]');
+    root.setValue('input[type="email"]', 'usmanhamzashoaib11@gmail.com');
+    await root.click('input[type="password"]');
+    root.setValue('input[type="password"]', '61246124');
+    root.click('button[type="submit"]');
 });
 
 When(/^I click on 3 dots on the dashboard$/, async () => {
-    await browser
-    .click('#root > div > div > main > div > div > div.css-d7wsyz.e1lvwkfs1 > div.relative > table > tbody > tr:nth-child(1) > td:nth-child(5) > div > div > div > button')
+    await root.click('@options').pause(2000);
 });
 
 Then(/^I click on archive dashboard button$/, async () => {
-    await browser
-    .click('svg[aria-label="archive icon"]').pause(2000);
+    await root.click('@archive').pause(2000);
 });

@@ -8,6 +8,7 @@ module.exports = {
     }
     },
   src_folders: ["tests"], //tests is a folder in workspace that has the step definitions
+  page_objects_path: 'pageObjects',
   test_settings: {
     default: {
       webdriver: {
@@ -18,10 +19,6 @@ module.exports = {
       },
       desiredCapabilities: {
         browserName: "chrome",
-        chromeOptions: {
-          args: ['--user-data-dir=C:\\Users\\DEll\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 10',
-          '--remote-debugging-port=9222']
-        }
       },
     },
   },

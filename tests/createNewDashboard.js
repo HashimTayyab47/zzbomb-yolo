@@ -1,22 +1,33 @@
 const { Given, Then, When } = require('@cucumber/cucumber');
 
-
+let dashboard;
 Given(/^I am on original dashboard$/, async () => {
-    await browser.url('http://localhost:3000');
+    dashboard = browser.page.dashboard();
+    await dashboard.navigate();
+});
+
+When(/^I log in3$/, async () => {
+    await dashboard.click('input[type="email"]');
+    dashboard.setValue('input[type="email"]', 'usmanhamzashoaib11@gmail.com');
+    await dashboard.click('input[type="password"]');
+    dashboard.setValue('input[type="password"]', '61246124');
+    dashboard.click('button[type="submit"]');
 });
 
 When(/^I click on new$/, async () => {
-    await browser.click('#root > div > header > div > div.css-11x9xqg.e4w71dr2 > div.css-16y0tgk.e8mjkge0 > span:nth-child(1) > button');
+    await dashboard
+    .waitForElementVisible('@new')
+    .click('@new');
 });
 
 Then(/^I click on dashboard$/, async () => {
-    await browser.click('body > span > span > div > div > div > ol > li:nth-child(3) > div').pause(2000);
+    await dashboard.click('@newDash').pause(2000);
 });
 
 Then(/^I add name for dashboard$/, ()=> {
-    return browser.setValue('#formField-name > div.css-ozd7xs.e197oqdz0 > div > input', 'My new dashboard').pause(5000);
+    return dashboard.setValue('@nameField', 'My new dashboard').pause(5000);
 });
 
 Then(/^I create the dashboard$/, ()=> {
-    return browser.click('body > div.ModalContainer > div > div > div > div > div > div.ModalBody.px4 > div > form > div.flex.align-center.flex-reverse > button.Button.Button.eyw0xx60.Button--primary.css-1q6qtcj.emiw9oj2').pause(5000);
+    return dashboard.click('@create').pause(5000);
 });
