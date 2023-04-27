@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="2">
+
+  <testsuite name="petstore"
+    errors="0" failures="1" hostname="" id="" package="petstore" skipped="0"
+    tests="2" time="0.3180" timestamp="">
+  
+    <testcase name="can GET current user" classname="petstore" time="0.1310" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="can GET view" classname="petstore" time="0.1870" assertions="1">  <failure message="expected 200 &#34;OK&#34;, got 404 &#34;Not Found&#34;">    at Object.can GET view (C:\Users\DEll\Desktop\ST Project 3\api test\nightwatch\tests\petstore.ts:52:14)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
