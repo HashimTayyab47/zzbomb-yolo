@@ -1,0 +1,21 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nightwatch/apitesting": "^0.2.2",
+    "@types/nightwatch": "^2.3.23",
+    "@types/supertest": "^2.0.12",
+    "chromedriver": "^112.0.0",
+    "nightwatch": "^2.6.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
